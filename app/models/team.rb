@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-class Team < ActiveRecord
+class Team < ApplicationRecord
 end

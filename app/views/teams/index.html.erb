@@ -1,0 +1,9 @@
+<% if @teams.blank? %>
+  <h1>No teams yet!</h1>
+  <%= link_to :new_team, new_team_path %>
+<% else %>
+  <% @teams.each do |team| %>
+    <%= team.name %>
+    <%= team.strokes %>
+  <% end %>
+<% end %>

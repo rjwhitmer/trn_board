@@ -1,0 +1,5 @@
+<%= form_with model: @teams, url: teams_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit :submit %>
+<% end %>
