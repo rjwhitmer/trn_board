@@ -2,7 +2,7 @@
 
 class TeamsController < ApplicationController
   def index
-    @teams = Team.all
+    @teams = Team.all.sort_by(&:strokes)
   end
 
   def new; end

@@ -10,21 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_15_175509) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_15_215628) do
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.integer "strokes", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "user_teams", force: :cascade do |t|
-    t.integer "users_id"
-    t.integer "teams_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["teams_id"], name: "index_user_teams_on_teams_id"
-    t.index ["users_id"], name: "index_user_teams_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,6 +24,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_15_175509) do
     t.integer "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "team_id"
+    t.index ["team_id"], name: "index_users_on_team_id"
   end
 
+  add_foreign_key "users", "teams"
 end

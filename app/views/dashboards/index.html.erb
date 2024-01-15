@@ -1,5 +1,8 @@
 <h1>The TRN Board</h1>
 
-
-<%= link_to :teams, teams_path %>
-<%= link_to :users, users_path %>
+<% @teams.each do |team| %>
+  <div>
+    <%= team.name %>
+    <%= team.strokes %>
+  </div>
+<% end %>

@@ -3,11 +3,13 @@
   <%= link_to :create_user, new_user_path %>
 <% else %>
   <% @users.each do |user| %>
-    <%= user.name %>
-    <%= user.phone_number %>
-    <%= user.email %>
+    <div>
+      <%= user.name %>
+      <%= user.phone_number %>
+      <%= user.email %>
+    </div>
   <% end %>
 <% end %>
 
-<%= link_to 'Add more users', new_user_path %>
+<%= link_to 'Add another player', new_user_path %>
 

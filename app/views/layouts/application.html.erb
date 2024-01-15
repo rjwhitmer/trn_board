@@ -10,6 +10,11 @@
   </head>
 
   <body>
+  <nav>
+    <%= link_to "Home", root_path %>
+    <%= link_to "Teams", teams_path %>
+    <%= link_to "Players", users_path %>
+  </nav>
     <%= yield %>
   </body>
 </html>
