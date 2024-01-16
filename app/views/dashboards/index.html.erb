@@ -1,8 +1,13 @@
 <h1>The TRN Board</h1>
 
-<% @teams.each do |team| %>
-  <div>
-    <%= team.name %>
-    <%= team.strokes %>
-  </div>
-<% end %>
+<div class="leaderboard">
+  <h2>LEADERS</h2>
+  <table>
+    <% @teams.each do |team| %>
+      <tr>
+        <td class="name-column"><%= team.name %></td>
+        <td class="strokes-column"><%= team.strokes %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
